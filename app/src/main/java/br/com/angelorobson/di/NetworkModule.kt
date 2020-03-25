@@ -1,7 +1,7 @@
 package br.com.angelorobson.di
 
 import android.content.Context
-import br.com.angelorobson.BuildConfig
+import br.com.angelorobson.covid19.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

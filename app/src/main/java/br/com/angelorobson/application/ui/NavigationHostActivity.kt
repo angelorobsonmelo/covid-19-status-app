@@ -3,7 +3,7 @@ package br.com.angelorobson.application.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
-import br.com.angelorobson.R
+import br.com.angelorobson.covid19.R
 
 class NavigationHostActivity : AppCompatActivity() {
 
