@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             app:defaultNavHost="true"
             app:navGraph="@navigation/navigation_graph"
-            tools:layout="@layout/photos_fragment" />
+            tools:layout="@layout/fragment_virus_status_brazil" />
 
     </FrameLayout>
 

@@ -7,7 +7,7 @@ import retrofit2.http.GET
 
 interface VirusStatusApiDataSource {
 
-    @GET("v1")
+    @GET("api/report/v1")
     fun getVirusStatusBrazil(): Deferred<ResponseListBase<StateStatusResponse>>
 
 }

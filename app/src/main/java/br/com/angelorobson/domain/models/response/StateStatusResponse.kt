@@ -8,6 +8,5 @@ data class StateStatusResponse(
     val state: String,
     var stateImageResId: Int,
     val cases: Int,
-    val deaths: Int,
-    val datetime: LocalDateTime
+    val deaths: Int
 )
