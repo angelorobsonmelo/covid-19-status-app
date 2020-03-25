@@ -3,7 +3,7 @@ package br.com.angelorobson.application.ui.partials.photos.photos.adapter
 import br.com.angelorobson.application.util.BindingAdapter
 import br.com.angelorobson.covid19.R
 import br.com.angelorobson.covid19.databinding.PhotoItemBinding
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 
 class PhotosAdapter(private val mPhotos: List<Photo>, private val onClick: (Photo) -> Unit) :
     BindingAdapter<PhotoItemBinding>() {

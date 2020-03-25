@@ -3,7 +3,7 @@ package br.com.angelorobson.application.ui.partials.photos.photos
 import androidx.lifecycle.MutableLiveData
 import br.com.angelorobson.application.util.BaseViewModel
 import br.com.angelorobson.application.util.EventLiveData
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import br.com.angelorobson.service.utils.UseCaseBaseCallback
 import br.com.angelorobson.usecases.local.GetAllPhotosLocalUseCase
 import br.com.angelorobson.usecases.local.InsertPhotosLocalUseCase

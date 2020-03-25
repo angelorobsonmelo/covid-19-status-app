@@ -2,7 +2,7 @@ package br.com.angelorobson.service.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import br.com.angelorobson.service.local.photo.PhotoDao
 
 @Database(entities = [Photo::class], version = 1)

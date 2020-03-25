@@ -1,7 +1,7 @@
 package br.com.angelorobson.usecases.remote.photos
 
 
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import br.com.angelorobson.service.remote.photo.PhotoRemoteDataSource
 import br.com.angelorobson.service.utils.UseCaseBaseCallback
 import br.com.angelorobson.service.utils.BaseRemoteDataSource

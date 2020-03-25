@@ -1,6 +1,6 @@
 package br.com.angelorobson.service.local.photo
 
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import br.com.angelorobson.service.utils.BaseRemoteDataSource
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

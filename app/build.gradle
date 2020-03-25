@@ -43,7 +43,7 @@ android {
             signingConfig signingConfigs.debug
             debuggable true
 
-            buildConfigField "String", "BASE_URL", '"https://jsonplaceholder.typicode.com/"'
+            buildConfigField "String", "BASE_URL", '"https://covid19-brazil-api.now.sh/"'
 
         }
 
@@ -54,7 +54,7 @@ android {
             debuggable true
 
             minifyEnabled false //to turn on proguard, change to true
-            buildConfigField "String", "BASE_URL", '"https://homolog"'
+            buildConfigField "String", "BASE_URL", '"https://covid19-brazil-api.now.sh/"'
         }
 
         staging {
@@ -66,7 +66,7 @@ android {
 
         release {
             minifyEnabled true
-            buildConfigField "String", "BASE_URL", '"https://release"'
+            buildConfigField "String", "BASE_URL", '"https://covid19-brazil-api.now.sh/"'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
         }
@@ -130,6 +130,9 @@ dependencies {
 
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Localdate
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

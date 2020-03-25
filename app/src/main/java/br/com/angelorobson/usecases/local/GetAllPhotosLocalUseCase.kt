@@ -1,6 +1,6 @@
 package br.com.angelorobson.usecases.local
 
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import br.com.angelorobson.service.local.photo.PhotoLocalDataSource
 import br.com.angelorobson.service.utils.BaseRemoteDataSource
 import br.com.angelorobson.service.utils.UseCaseBaseCallback

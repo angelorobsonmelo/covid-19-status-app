@@ -1,6 +1,6 @@
 package br.com.angelorobson.service.remote.photo
 
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 

@@ -1,6 +1,6 @@
 package br.com.angelorobson.service.local.photo
 
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import br.com.angelorobson.service.utils.BaseRemoteDataSource
 
 interface PhotoLocalDataSource {

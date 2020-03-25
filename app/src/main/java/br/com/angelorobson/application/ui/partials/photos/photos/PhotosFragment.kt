@@ -2,14 +2,12 @@ package br.com.angelorobson.application.ui.partials.photos.photos
 
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.angelorobson.application.ui.partials.photos.photos.adapter.PhotosAdapter
 import br.com.angelorobson.application.util.BindingFragment
 import br.com.angelorobson.application.util.EventObserver
 import br.com.angelorobson.application.util.extensions.isConnected
 import br.com.angelorobson.covid19.R
 import br.com.angelorobson.covid19.databinding.PhotosFragmentBinding
-import br.com.angelorobson.domain.Photo
+import br.com.angelorobson.domain.models.Photo
 import kotlinx.android.synthetic.main.photos_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

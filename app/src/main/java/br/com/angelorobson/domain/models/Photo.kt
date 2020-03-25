@@ -1,4 +1,4 @@
-package br.com.angelorobson.domain
+package br.com.angelorobson.domain.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
