@@ -23,6 +23,10 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
 
     private fun setUpFragment() {
         viewModel.getStatusVirusBrazil()
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.getStatusVirusBrazil()
+        }
     }
 
     private fun initObservers() {
@@ -39,7 +43,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
         })
 
         viewModel.isLoadingEventObserver.observe(viewLifecycleOwner, EventObserver {
-
+            binding.swipeRefreshLayout.isRefreshing = it
         })
 
     }
