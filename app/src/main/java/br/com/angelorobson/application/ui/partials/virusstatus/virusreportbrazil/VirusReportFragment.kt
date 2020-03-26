@@ -110,14 +110,6 @@ class VirusReportFragment : BindingFragment<FragmentVirusReportBinding>() {
         })
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            action_about -> {
-                startActivity(Intent(requireContext(), AboutActivity::class.java))
-            }
-        }
 
-        return super.onOptionsItemSelected(item)
-    }
 
 }

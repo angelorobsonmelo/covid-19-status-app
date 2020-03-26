@@ -1,7 +1,12 @@
 package br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazil
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import br.com.angelorobson.application.ui.activities.AboutActivity
 import br.com.angelorobson.application.util.BindingFragment
 import br.com.angelorobson.application.util.EventObserver
 import br.com.angelorobson.covid19.R
@@ -17,6 +22,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         setUpFragment()
         initObservers()
     }
@@ -49,5 +55,21 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
         })
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.about_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_about -> {
+                startActivity(Intent(requireContext(), AboutActivity::class.java))
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
 }
 
