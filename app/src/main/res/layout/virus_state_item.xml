@@ -6,7 +6,7 @@
 
         <variable
             name="state"
-            type="br.com.angelorobson.domain.models.response.StateStatusResponse" />
+            type="br.com.angelorobson.domain.models.response.VirusReportBrazil" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

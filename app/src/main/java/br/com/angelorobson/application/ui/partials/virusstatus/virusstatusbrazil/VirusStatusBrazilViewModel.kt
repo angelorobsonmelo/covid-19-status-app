@@ -2,7 +2,6 @@ package br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazi
 
 import br.com.angelorobson.application.util.BaseViewModel
 import br.com.angelorobson.application.util.EventLiveData
-import br.com.angelorobson.domain.models.response.StateStatusResponse
 import br.com.angelorobson.domain.models.response.VirusStatusBrazil
 import br.com.angelorobson.service.utils.UseCaseBaseCallback
 import br.com.angelorobson.usecases.remote.virusstatus.GetVirusStatusBrazilUseCase

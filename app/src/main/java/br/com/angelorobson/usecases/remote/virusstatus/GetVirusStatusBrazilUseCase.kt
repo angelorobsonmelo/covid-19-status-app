@@ -1,7 +1,5 @@
 package br.com.angelorobson.usecases.remote.virusstatus
 
-import br.com.angelorobson.covid19.R
-import br.com.angelorobson.domain.models.response.StateStatusResponse
 import br.com.angelorobson.domain.models.response.VirusStatusBrazil
 import br.com.angelorobson.service.remote.virusstatus.VirusStatusRemoteDataSource
 import br.com.angelorobson.service.utils.BaseRemoteDataSource
