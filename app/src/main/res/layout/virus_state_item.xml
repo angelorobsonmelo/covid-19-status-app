@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="state"
+            name="virusReport"
             type="br.com.angelorobson.domain.models.response.VirusReportBrazil" />
     </data>
 
@@ -16,6 +17,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -23,6 +25,93 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/state_flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ce"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/state_flag"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/state_flag"
+                    app:layout_constraintTop_toTopOf="@id/state_flag"
+                    app:state="@{virusReport.state}"
+                    app:uf="@{virusReport.uf}"
+                    tools:text="Alagoas - AL" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_cases"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cross"
+                    app:layout_constraintStart_toStartOf="@id/tv_state"
+                    app:layout_constraintTop_toBottomOf="@id/state_flag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_cases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/confirmed"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_cases"
+                    app:layout_constraintStart_toEndOf="@id/iv_cases"
+                    app:layout_constraintTop_toTopOf="@id/iv_cases" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_cases_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:intToString="@{virusReport.cases}"
+                    app:layout_constraintEnd_toEndOf="@id/tv_cases"
+                    app:layout_constraintStart_toStartOf="@id/tv_cases"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cases"
+                    tools:text="200" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_deaths"
+                    android:layout_width="24dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/skull_icon"
+                    app:layout_constraintStart_toEndOf="@id/tv_cases"
+                    app:layout_constraintTop_toBottomOf="@id/tv_state" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_deaths"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/deaths"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_deaths"
+                    app:layout_constraintStart_toEndOf="@id/iv_deaths"
+                    app:layout_constraintTop_toTopOf="@id/iv_deaths" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_deaths_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:intToString="@{virusReport.deaths}"
+                    app:layout_constraintEnd_toEndOf="@id/tv_deaths"
+                    app:layout_constraintStart_toStartOf="@id/tv_deaths"
+                    app:layout_constraintTop_toBottomOf="@id/tv_deaths"
+                    tools:text="200" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

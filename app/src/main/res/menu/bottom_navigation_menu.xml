@@ -7,7 +7,7 @@
         android:title="@string/resume" />
 
     <item
-        android:id="@+id/favoriteFragment"
+        android:id="@+id/virusReportFragment"
         android:title="@string/state_brazil" />
 
     <item

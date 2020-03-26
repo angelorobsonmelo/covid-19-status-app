@@ -23,6 +23,11 @@ fun convertdateTimeToString(textView: TextView, date: Date) {
     textView.text = date.formatToServerDateTimeDefaults()
 }
 
+@BindingAdapter(value = ["state", "uf"])
+fun stateAndUf(textView: TextView, state: String, uf: String) {
+    textView.text = textView.context.getString(R.string.state_and_uf, state, uf)
+}
+
 @BindingAdapter("initialDate")
 fun convertInitialToString(textView: TextView, initialDate: Date) {
     textView.text = initialDate.convertDateToStringDDMMM()

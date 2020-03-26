@@ -6,4 +6,5 @@
     <color name="green_recovered">#4CAF51</color>
     <color name="green_confirmed">#3F51B4</color>
     <color name="red_deaths">#ED4236</color>
+    <color name="yellow_warning">#ff9933</color>
 </resources>
