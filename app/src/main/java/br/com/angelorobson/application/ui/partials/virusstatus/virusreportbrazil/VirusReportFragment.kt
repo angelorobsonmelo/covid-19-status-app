@@ -1,17 +1,21 @@
 package br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.angelorobson.application.ui.activities.AboutActivity
 import br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil.adapter.VirusReportAdapter
 import br.com.angelorobson.application.util.BindingFragment
 import br.com.angelorobson.application.util.EventObserver
 import br.com.angelorobson.covid19.R
+import br.com.angelorobson.covid19.R.id.action_about
 import br.com.angelorobson.covid19.databinding.FragmentVirusReportBinding
 import br.com.angelorobson.domain.models.response.VirusReportBrazil
 import com.google.android.material.snackbar.Snackbar
@@ -104,6 +108,16 @@ class VirusReportFragment : BindingFragment<FragmentVirusReportBinding>() {
                 return false
             }
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            action_about -> {
+                startActivity(Intent(requireContext(), AboutActivity::class.java))
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 }

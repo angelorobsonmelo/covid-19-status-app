@@ -134,6 +134,9 @@ dependencies {
     // Localdate
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.2'
 
+    // About Screen
+    implementation 'com.github.jrvansuita:MaterialAbout:0.2.3'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
