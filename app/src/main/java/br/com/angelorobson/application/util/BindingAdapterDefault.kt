@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import br.com.angelorobson.application.util.extensions.convertBase64ToBitmap
+import br.com.angelorobson.application.util.extensions.getNumberFormat
 import com.squareup.picasso.Picasso
 import java.text.NumberFormat
 import java.util.*
@@ -29,8 +30,7 @@ fun convertInitialToString(textView: TextView, initialDate: Date) {
 
 @BindingAdapter("intToString")
 fun intToString(textView: TextView, number: Int) {
-    val formmated = NumberFormat.getNumberInstance(Locale("PT", "br")).format(number)
-    textView.text = formmated
+    textView.text = number.getNumberFormat()
 }
 
 @BindingAdapter("convertFormatToViewDateTimeDefaults")
