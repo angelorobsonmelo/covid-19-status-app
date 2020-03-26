@@ -24,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            tools:context="br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazil.VirusStatusBrazilFragment">
+            tools:context="br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazil.VirusStatusBrazilFragment"
+            tools:visibility="visible">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -32,19 +33,27 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_status"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/status_brazil"
-                    android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="32sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="2"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/card_deaths"
+                    app:layout_constraintStart_toStartOf="@id/card_deaths"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_brazil"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/brazil"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_status"
+                    app:layout_constraintStart_toEndOf="@id/tv_status"
+                    app:layout_constraintTop_toTopOf="@id/tv_status" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_confirmed"
@@ -52,7 +61,7 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="16dp"
-                    android:backgroundTint="@android:color/holo_blue_bright"
+                    android:backgroundTint="@color/green_confirmed"
                     app:layout_constraintEnd_toEndOf="@id/card_deaths"
                     app:layout_constraintEnd_toStartOf="@+id/card_deaths"
                     app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +104,7 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginEnd="2dp"
-                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:backgroundTint="@color/red_deaths"
                     app:layout_constraintBottom_toBottomOf="@id/card_confirmed"
                     app:layout_constraintEnd_toStartOf="@id/card_recovered"
                     app:layout_constraintStart_toEndOf="@id/card_confirmed"
@@ -138,7 +147,7 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginEnd="4dp"
-                    android:backgroundTint="@android:color/holo_green_dark"
+                    android:backgroundTint="@color/green_recovered"
                     app:layout_constraintBottom_toBottomOf="@id/card_deaths"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/card_deaths"
@@ -181,14 +190,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:drawablePadding="8dp"
-                    tools:text="Atualizado 26/03/2020 - 18:50"
                     android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
                     android:textColor="@android:color/black"
                     app:convertFormatToViewDateTimeDefaults="@{virusBrazil.updatedAt}"
                     app:layout_constraintEnd_toEndOf="@id/card_recovered"
                     app:layout_constraintStart_toStartOf="@id/card_confirmed"
-                    app:layout_constraintTop_toBottomOf="@id/card_recovered" />
+                    app:layout_constraintTop_toBottomOf="@id/card_recovered"
+                    tools:text="Atualizado 26/03/2020 - 18:50" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

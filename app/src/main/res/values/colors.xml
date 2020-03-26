@@ -3,4 +3,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="green_recovered">#4CAF51</color>
+    <color name="green_confirmed">#3F51B4</color>
+    <color name="red_deaths">#ED4236</color>
 </resources>

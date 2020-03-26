@@ -7,5 +7,6 @@
     <string name="confirmed">Confirmados</string>
     <string name="deaths">Mortes</string>
     <string name="curados">Curados</string>
-    <string name="update_at">Atualizado %s</string>
+    <string name="update_at">Dados atualizados em %s</string>
+    <string name="resume">Resumo</string>
 </resources>

@@ -22,6 +22,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
     }
 
     private fun setUpFragment() {
+        showToolbarWithoutDisplayArrowBack(getString(R.string.resume))
         viewModel.getStatusVirusBrazil()
 
         binding.swipeRefreshLayout.setOnRefreshListener {
@@ -44,6 +45,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
 
         viewModel.isLoadingEventObserver.observe(viewLifecycleOwner, EventObserver {
             binding.swipeRefreshLayout.isRefreshing = it
+            binding.tvUpdateAt.visibility = if (it) View.INVISIBLE else View.VISIBLE
         })
 
     }
