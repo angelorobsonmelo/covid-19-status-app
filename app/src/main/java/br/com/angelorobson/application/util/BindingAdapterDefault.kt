@@ -3,6 +3,7 @@ package br.com.angelorobson.application.util
 import android.graphics.BitmapFactory
 import android.view.View
 import android.view.View.*
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -46,6 +47,16 @@ fun intToString(textView: TextView, number: Int) {
 @BindingAdapter("convertFormatToViewDateTimeDefaults")
 fun convertFormatToViewDateTimeDefaults(textView: TextView, date: Date?) {
     textView.text = textView.context.getString(R.string.update_at, date?.formatDateTime())
+}
+
+@BindingAdapter(value = ["descriptionButton", "numberTextButton"])
+fun buttonTextStatus(button: Button, descriptionButton: String, numberTextButton: Int) {
+    button.text =
+        button.context.getString(
+            R.string.button_status_text,
+            descriptionButton,
+            numberTextButton.toString()
+        )
 }
 
 @BindingAdapter("finalDate")

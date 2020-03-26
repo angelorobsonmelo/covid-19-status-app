@@ -11,13 +11,14 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:backgroundTint="@android:color/white"
             tools:context="br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil.VirusReportFragment">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_warning"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:drawableTop="@drawable/ic_warning_black_24dp"
@@ -34,7 +35,7 @@
                 android:layout_marginTop="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/tv_warning"
-                app:layout_constraintStart_toStartOf="@id/tv_warning"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_warning"
                 tools:itemCount="3"
                 tools:listitem="@layout/virus_state_item" />

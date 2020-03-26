@@ -8,11 +8,12 @@
     <string name="deaths">Mortes</string>
     <string name="curados">Curados</string>
     <string name="update_at">Dados atualizados em %s</string>
+    <string name="button_status_text">%s: %s</string>
     <string name="resume">Resumo</string>
 
 
     <string name="warning">"Divergências podem ocorrer entre os números das Secretarias Estaduais e do Governo Federal."</string>
-    <string name="state_and_uf">%s, %s</string>
+    <string name="state_and_uf">%s - %s</string>
     <string name="all_states">Todos os Estados</string>
     <string name="no_data">Não há dados no momento</string>
 </resources>
