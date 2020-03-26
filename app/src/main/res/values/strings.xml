@@ -2,11 +2,12 @@
     <string name="app_name">TemplateApp</string>
 
     <string name="brazil">Brasil</string>
-    <string name="state_brazil">Estados do Brasil</string>
+    <string name="state_brazil">Estados</string>
     <string name="status_brazil">Brasil</string>
     <string name="confirmed">Confirmados</string>
     <string name="deaths">Mortes</string>
     <string name="curados">Curados</string>
+    <string name="cases">Casos</string>
     <string name="update_at">Dados atualizados em %s</string>
     <string name="button_status_text">%s: %s</string>
     <string name="resume">Resumo</string>

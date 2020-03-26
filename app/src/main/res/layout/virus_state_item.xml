@@ -65,31 +65,31 @@
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
+                    android:backgroundTint="@color/green_confirmed"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:clickable="false"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/black"
-                    app:descriptionButton="@{@string/confirmed}"
+                    android:textColor="@android:color/white"
+                    app:descriptionButton="@{@string/cases}"
                     app:icon="@drawable/ic_check_green_24dp"
-                    app:iconPadding="8dp"
                     app:iconTint="@color/green_recovered"
                     app:numberTextButton="@{virusReport.cases}"
-                    tools:text="Confirmados: 525" />
+                    tools:text="Casos: 525" />
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
+                    android:backgroundTint="@color/red_deaths"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     app:descriptionButton="@{@string/deaths}"
                     app:icon="@drawable/skull_icon"
-                    app:iconPadding="8dp"
                     app:iconSize="24sp"
-                    app:iconTint="@android:color/black"
+                    app:iconTint="@android:color/white"
                     app:numberTextButton="@{virusReport.deaths}"
                     tools:text="Mortes: 20" />
             </LinearLayout>

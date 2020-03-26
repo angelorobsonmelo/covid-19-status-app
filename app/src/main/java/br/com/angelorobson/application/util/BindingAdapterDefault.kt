@@ -55,7 +55,7 @@ fun buttonTextStatus(button: Button, descriptionButton: String, numberTextButton
         button.context.getString(
             R.string.button_status_text,
             descriptionButton,
-            numberTextButton.toString()
+            numberTextButton.getNumberFormat()
         )
 }
 
@@ -69,6 +69,13 @@ fun convertFinalDateToString(textView: TextView, finalDate: Date) {
 fun loadImage(view: ImageView, imageUrl: String?) {
     Picasso.get()
         .load(imageUrl)
+        .into(view)
+}
+
+@BindingAdapter("loadStateImgUrl")
+fun loadStateImgUrl(view: ImageView, uf: String) {
+    Picasso.get()
+        .load("https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${uf}.png")
         .into(view)
 }
 
