@@ -20,7 +20,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -176,7 +175,23 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_update_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="8dp"
+                    tools:text="Atualizado 26/03/2020 - 18:50"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/black"
+                    app:convertFormatToViewDateTimeDefaults="@{virusBrazil.updatedAt}"
+                    app:layout_constraintEnd_toEndOf="@id/card_recovered"
+                    app:layout_constraintStart_toStartOf="@id/card_confirmed"
+                    app:layout_constraintTop_toBottomOf="@id/card_recovered" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

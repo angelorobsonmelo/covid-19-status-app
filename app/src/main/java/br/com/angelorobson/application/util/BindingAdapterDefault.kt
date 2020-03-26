@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import br.com.angelorobson.application.util.extensions.convertBase64ToBitmap
 import br.com.angelorobson.application.util.extensions.getNumberFormat
+import br.com.angelorobson.covid19.R
 import com.squareup.picasso.Picasso
-import java.text.NumberFormat
 import java.util.*
 
 
@@ -28,14 +28,19 @@ fun convertInitialToString(textView: TextView, initialDate: Date) {
     textView.text = initialDate.convertDateToStringDDMMM()
 }
 
+@BindingAdapter("dateFormatTimeUpdated")
+fun dateFormatTimeUpdated(textView: TextView, date: Date?) {
+    textView.text = textView.context.getString(R.string.update_at, date?.formatDateTime())
+}
+
 @BindingAdapter("intToString")
 fun intToString(textView: TextView, number: Int) {
     textView.text = number.getNumberFormat()
 }
 
 @BindingAdapter("convertFormatToViewDateTimeDefaults")
-fun convertFormatToViewDateTimeDefaults(textView: TextView, date: Date) {
-    textView.text = date.formatToViewDateTimeDefaults()
+fun convertFormatToViewDateTimeDefaults(textView: TextView, date: Date?) {
+    textView.text = textView.context.getString(R.string.update_at, date?.formatDateTime())
 }
 
 @BindingAdapter("finalDate")
