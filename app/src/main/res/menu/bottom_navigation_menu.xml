@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/virusReportFragment"
-        android:title="@string/state_brazil" />
+        android:title="@string/states_brazil" />
 
     <item
         android:id="@+id/eventFormFragment"

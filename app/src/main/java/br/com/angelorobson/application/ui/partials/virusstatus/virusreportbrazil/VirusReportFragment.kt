@@ -1,7 +1,12 @@
 package br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil
 
 import android.os.Bundle
+import android.text.InputType
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil.adapter.VirusReportAdapter
 import br.com.angelorobson.application.util.BindingFragment
@@ -19,23 +24,41 @@ class VirusReportFragment : BindingFragment<FragmentVirusReportBinding>() {
 
     private val viewModel by viewModel<VirusReportViewModel>()
 
+    private lateinit var mAdapter: VirusReportAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpFragment()
     }
 
     private fun setUpFragment() {
-        showToolbarWithoutDisplayArrowBack(getString(R.string.all_states))
+        showToolbarWithoutDisplayArrowBack(getString(R.string.states_brazil))
+        setupRecyclerView()
+        setHasOptionsMenu(true)
+
         viewModel.getVirusReportBrazil()
         initObservers()
+        initSwipeListener()
+    }
+
+    private fun initSwipeListener() {
         binding.swipeRefreshLayout.setOnRefreshListener {
             viewModel.getVirusReportBrazil()
         }
     }
 
+    private fun setupRecyclerView() {
+        mAdapter = VirusReportAdapter(mutableListOf())
+
+        binding.recyclerView.run {
+            adapter = mAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+    }
+
     private fun initObservers() {
         viewModel.successObserver.observe(viewLifecycleOwner, EventObserver {
-            setupRecyclerView(it)
+            mAdapter.updateItems(it)
         })
 
         viewModel.errorObserver.observe(viewLifecycleOwner, EventObserver {
@@ -52,11 +75,35 @@ class VirusReportFragment : BindingFragment<FragmentVirusReportBinding>() {
 
     }
 
-    private fun setupRecyclerView(it: List<VirusReportBrazil>) {
-        binding.recyclerView.run {
-            adapter = VirusReportAdapter(it)
-            layoutManager = LinearLayoutManager(requireContext())
-        }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+
+        inflater.inflate(R.menu.menu_filter, menu)
+        val searchView = setupSearchView(menu)
+        setQueryTextListener(searchView)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    private fun setupSearchView(menu: Menu): SearchView {
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem.actionView as SearchView
+
+        searchView.imeOptions = EditorInfo.IME_ACTION_DONE
+        searchView.inputType = InputType.TYPE_CLASS_TEXT
+        return searchView
+    }
+
+    private fun setQueryTextListener(searchView: SearchView) {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                mAdapter.filter.filter(newText)
+                return false
+            }
+        })
     }
 
 }

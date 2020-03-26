@@ -2,7 +2,7 @@
     <string name="app_name">TemplateApp</string>
 
     <string name="brazil">Brasil</string>
-    <string name="state_brazil">Estados</string>
+    <string name="states_brazil">Estados</string>
     <string name="status_brazil">Brasil</string>
     <string name="confirmed">Confirmados</string>
     <string name="deaths">Mortes</string>
@@ -17,4 +17,6 @@
     <string name="state_and_uf">%s - %s</string>
     <string name="all_states">Todos os Estados</string>
     <string name="no_data">Não há dados no momento</string>
+    <string name="search">Procurar</string>
+    <string name="about">About</string>
 </resources>
