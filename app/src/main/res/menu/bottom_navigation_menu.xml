@@ -2,13 +2,13 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/eventsFragment"
+        android:id="@+id/virusStatusBrazilFragment"
         android:enabled="true"
-        android:title="Item 1" />
+        android:title="@string/brazil" />
 
     <item
         android:id="@+id/favoriteFragment"
-        android:title="Item 2" />
+        android:title="@string/state_brazil" />
 
     <item
         android:id="@+id/eventFormFragment"

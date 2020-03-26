@@ -1,5 +1,5 @@
 package br.com.angelorobson.domain.models.response
 
-class ResponseListBase<T>(
-    val data: List<T>
+class ResponseBase<T>(
+    val data: T
 )

@@ -27,7 +27,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
 
     private fun initObservers() {
         viewModel.successObserver.observe(viewLifecycleOwner, EventObserver {
-             print(it)
+            binding.virusBrazil = it
         })
 
         viewModel.errorObserver.observe(viewLifecycleOwner, EventObserver {

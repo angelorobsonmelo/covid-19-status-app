@@ -3,17 +3,18 @@ package br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazi
 import br.com.angelorobson.application.util.BaseViewModel
 import br.com.angelorobson.application.util.EventLiveData
 import br.com.angelorobson.domain.models.response.StateStatusResponse
+import br.com.angelorobson.domain.models.response.VirusStatusBrazil
 import br.com.angelorobson.service.utils.UseCaseBaseCallback
 import br.com.angelorobson.usecases.remote.virusstatus.GetVirusStatusBrazilUseCase
 
 class VirusStatusBrazilViewModel(
     private val getVirusStatusBrazilUseCase: GetVirusStatusBrazilUseCase
-) : BaseViewModel<List<StateStatusResponse>>() {
+) : BaseViewModel<VirusStatusBrazil>() {
 
     fun getStatusVirusBrazil() {
         getVirusStatusBrazilUseCase.getVirusStatusBrazil(object :
-            UseCaseBaseCallback.UseCaseCallback<List<StateStatusResponse>> {
-            override fun onSuccess(response: List<StateStatusResponse>) {
+            UseCaseBaseCallback.UseCaseCallback<VirusStatusBrazil> {
+            override fun onSuccess(response: VirusStatusBrazil) {
                 successObserver.value = EventLiveData(response)
             }
 

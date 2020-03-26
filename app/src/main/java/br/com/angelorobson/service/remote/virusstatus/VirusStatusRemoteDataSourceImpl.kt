@@ -1,6 +1,6 @@
 package br.com.angelorobson.service.remote.virusstatus
 
-import br.com.angelorobson.domain.models.response.StateStatusResponse
+import br.com.angelorobson.domain.models.response.VirusStatusBrazil
 import br.com.angelorobson.service.utils.BaseRemoteDataSource
 import br.com.angelorobson.service.utils.CoroutineScopeContext
 import kotlinx.coroutines.launch
@@ -9,7 +9,7 @@ class VirusStatusRemoteDataSourceImpl(private val virusStatusApiDataSource: Viru
     VirusStatusRemoteDataSource, CoroutineScopeContext() {
 
 
-    override fun getVirusStatusBrazil(callback: BaseRemoteDataSource.RemoteDataSourceCallback<List<StateStatusResponse>>) {
+    override fun getVirusStatusBrazil(callback: BaseRemoteDataSource.RemoteDataSourceCallback<VirusStatusBrazil>) {
         launch {
             callback.isLoading(true)
             try {
