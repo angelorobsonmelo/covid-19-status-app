@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TemplateApp</string>
+    <string name="app_name">Covid-19 Report</string>
 
     <string name="brazil">Brasil</string>
     <string name="states_brazil">Estados</string>
@@ -11,12 +11,13 @@
     <string name="update_at">Dados atualizados em %s</string>
     <string name="button_status_text">%s: %s</string>
     <string name="resume">Resumo</string>
+    <string name="recent">Recente</string>
 
 
     <string name="warning">"Divergências podem ocorrer entre os números das Secretarias Estaduais e do Governo Federal."</string>
     <string name="state_and_uf">%s - %s</string>
     <string name="all_states">Todos os Estados</string>
     <string name="no_data">Não há dados no momento</string>
-    <string name="search">Procurar</string>
+    <string name="search">Procurar estado</string>
     <string name="about">Sobre</string>
 </resources>

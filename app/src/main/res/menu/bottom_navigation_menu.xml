@@ -4,14 +4,12 @@
     <item
         android:id="@+id/virusStatusBrazilFragment"
         android:enabled="true"
-        android:title="@string/resume" />
+        android:icon="@drawable/ic_update_white_24dp"
+        android:title="@string/recent" />
 
     <item
         android:id="@+id/virusReportFragment"
+        android:icon="@drawable/ic_flag_white_24dp"
         android:title="@string/states_brazil" />
-
-    <item
-        android:id="@+id/eventFormFragment"
-        android:title="Item 3" />
 
 </menu>

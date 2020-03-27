@@ -47,8 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/colorPrimary"
-        app:itemIconTint="@color/nav_items_colors"
-        app:itemTextColor="@color/nav_items_colors"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu" />
 

@@ -2,6 +2,7 @@ package br.com.angelorobson.application.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import br.com.angelorobson.covid19.R

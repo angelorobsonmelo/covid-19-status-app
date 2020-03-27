@@ -47,8 +47,8 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_brazil"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="8dp"
                     android:src="@drawable/brazil"
                     app:layout_constraintBottom_toBottomOf="@id/tv_status"
