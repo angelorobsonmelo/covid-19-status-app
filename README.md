@@ -2,10 +2,6 @@
 
 Application designed to provide reliable information about the status of the virus.
 
-# Screenshots
-
-![screenshot-1585328699761](https://user-images.githubusercontent.com/11642459/77781250-056f1e00-7034-11ea-85a4-3d203b4536df.jpg | width=100)
-
 
 ### This project uses the following stack:
 
