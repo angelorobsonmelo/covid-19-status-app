@@ -20,7 +20,6 @@ class Application : Application() {
                 apiModule,
                 remoteDataSourceModule,
                 remoteUseCaseModule,
-                daoModule,
                 localDataSourceModule,
                 localUseCaseModule,
                 viewModuleModule

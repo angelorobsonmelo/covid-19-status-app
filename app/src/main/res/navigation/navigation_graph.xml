@@ -6,11 +6,6 @@
     app:startDestination="@id/virusStatusBrazilFragment">
 
     <fragment
-        android:id="@+id/photosFragment"
-        android:name="br.com.angelorobson.application.ui.partials.photos.photos.PhotosFragment"
-        android:label="photos_fragment"
-        tools:layout="@layout/photos_fragment" />
-    <fragment
         android:id="@+id/virusStatusBrazilFragment"
         android:name="br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazil.VirusStatusBrazilFragment"
         android:label="VirusStatusBrazilFragment" />
