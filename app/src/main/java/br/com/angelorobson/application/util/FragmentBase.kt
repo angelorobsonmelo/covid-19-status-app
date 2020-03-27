@@ -19,7 +19,7 @@ open class FragmentBase : Fragment() {
 
     }
 
-    private fun setUpBehavorBottomNavigation() {
+    fun setUpBehaviorBottomNavigation() {
         val bottomNavigationView = activity?.bottomNavigation
         val layoutParams = bottomNavigationView?.layoutParams as CoordinatorLayout.LayoutParams
         layoutParams.behavior = BottomNavigationBehavior()
