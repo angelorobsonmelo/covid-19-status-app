@@ -37,7 +37,10 @@ open class FragmentBase : Fragment() {
         alert.show()
     }
 
-    fun showConfirmDialog(title: String, message: String, dialogListener: OnConfirmDialogListener) {
+    fun showConfirmDialog(
+        message: String,
+        dialogListener: OnConfirmDialogListener
+    ) {
         val builder = AlertDialog.Builder(requireContext())
 
         builder
@@ -55,7 +58,6 @@ open class FragmentBase : Fragment() {
     }
 
     fun showConfirmDialogWithMessageString(
-        title: String,
         message: String,
         dialogListener: OnConfirmDialogListener
     ) {
@@ -76,7 +78,6 @@ open class FragmentBase : Fragment() {
     }
 
     fun showConfirmDialogWithCallback(
-        title: String,
         message: String,
         dialogListener: OnConfirmDialogListener
     ) {
