@@ -1,15 +1,23 @@
-# Template App
+# Covid-19 Report
 
-A simple Android project that will serve as a basis for future projects.
+Application designed to provide reliable information about the status of the virus.
 
-This project uses the following stack:
+|                                                                                                                                   |
+| :-------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------: | 
+| ![screenshot-1585328699761](https://user-images.githubusercontent.com/11642459/77781250-056f1e00-7034-11ea-85a4-3d203b4536df.jpg) | ![screenshot-1585328806674](https://user-images.githubusercontent.com/11642459/77781368-351e2600-7034-11ea-8185-9531f68f10bd.jpg) |
+|                                                                                                                                   |                                                                                                                                   |          
+
+### This project uses the following stack:
 
 - Android Jetpack Live Data
 - Android Jetpack View Model
 - Android Jetpack navigation
 - MVVM (Model-View-ViewMode)
+- Androidx
+- Firebase Analytics
+- Firebase Crashlytics
+- Firebase Performace
 - Use case pattern
-- Anti corruption layer
 - Google Material Design for Android
 - Koin (Dependency Injection)
 - Kotlin
@@ -18,5 +26,30 @@ This project uses the following stack:
 - Retrofit
 - Data Binding
 - Picasso (Caching images)
-- Room database 
 - Material Design 2.0
+
+---
+
+## Author
+
+<table>
+  <tr>
+    <td align="center">
+        <a href="https://github.com/angelorobsonmelo">
+            <img src="https://avatars2.githubusercontent.com/u/11642459?s=460&u=58ec66eae8d5053422fd7ce064e056589319d44f&v=4" width="100px;" alt=""/>
+            <br />
+            <sub><b>Robson Silva</b></sub>
+            <br />
+            </a><a title="Code">💻</a>
+        </a>
+    </td>
+  <tr>
+</table>
+
+---
+
+## Special thanks! 
+
+I would like to thank arthur [Arthur Ribeiro](https://github.com/devarthurribeiro), for having made the api available for free. [API](https://github.com/devarthurribeiro/covid19-brazil-api)
+
+---
