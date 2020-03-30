@@ -34,7 +34,7 @@ Application designed to provide reliable information about the status of the vir
         <a href="https://github.com/angelorobsonmelo">
             <img src="https://avatars2.githubusercontent.com/u/11642459?s=460&u=58ec66eae8d5053422fd7ce064e056589319d44f&v=4" width="100px;" alt=""/>
             <br />
-            <sub><b>Robson Silva</b></sub>
+            <sub><b>Ângelo Robson</b></sub>
             <br />
             </a><a title="Code">💻</a>
         </a>
