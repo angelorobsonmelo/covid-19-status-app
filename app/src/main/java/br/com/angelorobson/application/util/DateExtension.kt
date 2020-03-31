@@ -12,8 +12,18 @@ fun Date.formatToServerDateTimeDefaults(): String {
 }
 
 fun Date.formatDateTime(): String {
-    val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale("pt", "BR"))
-    return sdf.format(this)
+    return when (Locale.getDefault().language) {
+        "en" -> {
+            val sdf = SimpleDateFormat("yyyy-MM-dd - hh:mm aa", Locale.ENGLISH)
+            return sdf.format(this)
+        }
+        else -> {
+            val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale("pt", "BR"))
+            return sdf.format(this)
+        }
+    }
+
+
 }
 
 fun Date.formatToTruncatedDateTime(): String {
