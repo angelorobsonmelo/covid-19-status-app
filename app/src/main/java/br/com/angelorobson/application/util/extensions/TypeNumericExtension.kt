@@ -12,5 +12,12 @@ fun Int.isEqual(comparator: Int): Boolean {
 }
 
 fun Int.getNumberFormat(): String {
-    return NumberFormat.getNumberInstance(Locale("PT", "br")).format(this)
+    return when (Locale.getDefault().language) {
+        "en" -> {
+            NumberFormat.getNumberInstance(Locale.ENGLISH).format(this)
+        }
+        else -> {
+            return NumberFormat.getNumberInstance(Locale("PT", "br")).format(this)
+        }
+    }
 }
