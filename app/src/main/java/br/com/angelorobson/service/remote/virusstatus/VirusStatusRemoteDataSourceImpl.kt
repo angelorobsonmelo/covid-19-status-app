@@ -43,7 +43,9 @@ class VirusStatusRemoteDataSourceImpl(private val virusStatusApiDataSource: Viru
         launch {
             callback.isLoading(true)
             try {
-                val result = virusStatusApiDataSource.getReportCountries().await()
+                val result = virusStatusApiDataSource.getReportCountries()
+                    .await()
+                
                 callback.onSuccess(result.data)
             } catch (t: Throwable) {
                 callback.onError(t.localizedMessage)

@@ -42,8 +42,17 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/card_deaths"
                     app:layout_constraintStart_toStartOf="@id/card_deaths"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Brasil" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_brazil"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/brazil"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_status"
+                    app:layout_constraintStart_toEndOf="@id/tv_status"
+                    app:layout_constraintTop_toTopOf="@id/tv_status" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_confirmed"
