@@ -11,7 +11,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@android:color/white"
+            android:backgroundTint="@color/grayBG"
             tools:context="br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil.VirusReportFragment">
 
 

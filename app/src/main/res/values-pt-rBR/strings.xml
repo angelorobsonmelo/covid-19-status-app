@@ -14,6 +14,7 @@
     <string name="resume">Resumo</string>
     <string name="recent">Recente</string>
     <string name="active">Ativos</string>
+    <string name="mortality_rate">Taxa de mortalidade: %s</string>
 
     <string name="state_and_uf">%s - %s</string>
     <string name="all_states">Todos os Estados</string>

@@ -11,8 +11,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@android:color/white">
-
+            android:backgroundTint="@color/grayBG">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"

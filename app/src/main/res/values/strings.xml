@@ -13,6 +13,7 @@
     <string name="resume">Resume</string>
     <string name="recent">Recent</string>
     <string name="active">Active</string>
+    <string name="mortality_rate">Mortality rate: %s</string>
     <string name="button_status_text" translatable="false">%s: %s</string>
 
     <string name="state_and_uf">%s - %s</string>

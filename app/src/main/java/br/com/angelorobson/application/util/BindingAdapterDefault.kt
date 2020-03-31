@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import br.com.angelorobson.application.util.extensions.convertBase64ToBitmap
+import br.com.angelorobson.application.util.extensions.getDecimals
 import br.com.angelorobson.application.util.extensions.getNumberFormat
 import br.com.angelorobson.covid19.R
 import com.squareup.picasso.Picasso
@@ -56,6 +57,20 @@ fun buttonTextStatus(button: Button, descriptionButton: String, numberTextButton
             R.string.button_status_text,
             descriptionButton,
             numberTextButton.getNumberFormat()
+        )
+}
+
+@BindingAdapter(value = ["deaths", "confirms"])
+fun buttonTextStatus(textView: TextView, deaths: Int, confirms: Int) {
+    var rate = 0.0
+    if (confirms != 0) {
+        rate = (deaths.toDouble() / confirms) * 100
+    }
+
+    textView.text =
+        textView.context.getString(
+            R.string.mortality_rate,
+            "${rate.getDecimals()}%"
         )
 }
 
