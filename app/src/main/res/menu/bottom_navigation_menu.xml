@@ -14,7 +14,7 @@
 
     <item
         android:id="@+id/virusReportCountriesFragment"
-        android:icon="@drawable/ic_flag_white_24dp"
+        android:icon="@drawable/ic_world"
         android:title="@string/world" />
 
 </menu>

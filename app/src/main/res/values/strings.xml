@@ -9,7 +9,7 @@
     <string name="deaths">Deaths</string>
     <string name="curados">Recovered</string>
     <string name="cases">Cases</string>
-    <string name="update_at">Data updated on %s</string>
+    <string name="update_at">Updated on %s</string>
     <string name="resume">Resume</string>
     <string name="recent">Recent</string>
     <string name="button_status_text" translatable="false">%s: %s</string>
