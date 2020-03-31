@@ -87,7 +87,7 @@
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     app:descriptionButton="@{@string/deaths}"
-                    app:icon="@drawable/skull_icon"
+                    app:icon="@drawable/ic_cross"
                     app:iconSize="24sp"
                     app:iconTint="@android:color/white"
                     app:numberTextButton="@{virusReport.deaths}"

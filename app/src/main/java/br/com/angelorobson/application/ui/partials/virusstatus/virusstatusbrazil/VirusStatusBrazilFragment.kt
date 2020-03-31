@@ -27,9 +27,13 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
         initObservers()
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getStatusVirusBrazil()
+    }
+
     private fun setUpFragment() {
         showToolbarWithoutDisplayArrowBack(getString(R.string.recent))
-        viewModel.getStatusVirusBrazil()
 
         binding.swipeRefreshLayout.setOnRefreshListener {
             viewModel.getStatusVirusBrazil()
