@@ -65,10 +65,10 @@
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/borderlessButtonStyle"
-                    android:backgroundTint="@color/green_confirmed"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/green_confirmed"
                     android:clickable="false"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
@@ -80,9 +80,9 @@
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/borderlessButtonStyle"
-                    android:backgroundTint="@color/red_deaths"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/red_deaths"
                     android:clickable="false"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
@@ -93,6 +93,35 @@
                     app:numberTextButton="@{virusReport.deaths}"
                     tools:text="Mortes: 20" />
             </LinearLayout>
+
+            <View
+                android:id="@+id/view_divider"
+                style="@style/Divider"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_taxa_deaths" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_taxa_deaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:drawablePadding="8dp"
+                android:paddingBottom="4dp"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@android:color/black"
+                app:confirms="@{virusReport.cases}"
+                app:deaths="@{virusReport.deaths}"
+                app:layout_constraintEnd_toEndOf="@id/card_recovered"
+                app:layout_constraintStart_toStartOf="@id/card_confirmed"
+                app:layout_constraintTop_toBottomOf="@id/card_confirmed"
+                tools:layout_editor_absoluteY="162dp"
+                tools:text="Taxa de mortalidade: 1%" />
+
 
         </LinearLayout>
 

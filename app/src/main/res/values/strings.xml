@@ -9,7 +9,7 @@
     <string name="deaths">Deaths</string>
     <string name="recovered">Recovered</string>
     <string name="cases">Cases</string>
-    <string name="update_at">Updated on %s</string>
+    <string name="update_at">Updated at %s</string>
     <string name="resume">Resume</string>
     <string name="recent">Recent</string>
     <string name="active">Active</string>
