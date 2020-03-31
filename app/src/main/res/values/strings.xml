@@ -1,23 +1,24 @@
 <resources>
     <string name="app_name">C-19 Report</string>
 
-    <string name="brazil">Brasil</string>
-    <string name="states_brazil">Estados</string>
-    <string name="status_brazil">Brasil</string>
-    <string name="confirmed">Confirmados</string>
-    <string name="deaths">Mortes</string>
-    <string name="curados">Curados</string>
-    <string name="cases">Casos</string>
-    <string name="update_at">Dados atualizados em %s</string>
-    <string name="button_status_text">%s: %s</string>
-    <string name="resume">Resumo</string>
-    <string name="recent">Recente</string>
+    <string name="brazil">Brazil</string>
+    <string name="states_brazil">States</string>
+    <string name="world">World</string>
+    <string name="status_brazil">Brazil</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="deaths">Deaths</string>
+    <string name="curados">Recovered</string>
+    <string name="cases">Cases</string>
+    <string name="update_at">Data updated on %s</string>
+    <string name="resume">Resume</string>
+    <string name="recent">Recent</string>
+    <string name="button_status_text" translatable="false">%s: %s</string>
 
-
-    <string name="warning">"Divergências podem ocorrer entre os números das Secretarias Estaduais e do Governo Federal."</string>
     <string name="state_and_uf">%s - %s</string>
-    <string name="all_states">Todos os Estados</string>
-    <string name="no_data">Não há dados no momento</string>
-    <string name="search">Procurar estado</string>
-    <string name="about">Sobre</string>
+    <string name="all_states">All States</string>
+    <string name="no_data">No data at this time</string>
+    <string name="search">Search status</string>
+    <string name="search_by_country">Search Country</string>
+    <string name="about">About</string>
+
 </resources>

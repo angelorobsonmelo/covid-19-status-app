@@ -46,7 +46,6 @@ class AboutActivity : AppCompatActivity() {
             .addLinkedInLink("ângelo-melo-8b4a47148/")
             .addEmailLink("angelorobsonmelo@gmail.com")
             .addWhatsappLink("Ângelo Robson", "+5582991228122")
-            .addFiveStarsAction()
             .setVersionNameAsAppSubTitle()
             .addShareAction(R.string.app_name)
             .setActionsColumnsCount(2)

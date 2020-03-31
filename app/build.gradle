@@ -122,7 +122,7 @@ dependencies {
 
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
-    
+
     // About Screen
     implementation 'com.github.jrvansuita:MaterialAbout:0.2.3'
 

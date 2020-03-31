@@ -13,4 +13,8 @@
         android:id="@+id/virusReportFragment"
         android:name="br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil.VirusReportFragment"
         android:label="VirusReportFragment" />
+    <fragment
+        android:id="@+id/virusReportCountriesFragment"
+        android:name="br.com.angelorobson.application.ui.partials.virusstatus.virusreportcountries.VirusReportCountriesFragment"
+        android:label="VirusReportCountriesFragment" />
 </navigation>

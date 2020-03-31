@@ -1,4 +1,4 @@
-package br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil
+package br.com.angelorobson.application.ui.partials.virusstatus.virusreportcountries
 
 import android.os.Bundle
 import android.text.InputType
@@ -8,22 +8,22 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil.adapter.VirusReportAdapter
+import br.com.angelorobson.application.ui.partials.virusstatus.virusreportcountries.adapter.VirusReportCountriesAdapter
 import br.com.angelorobson.application.util.BindingFragment
 import br.com.angelorobson.application.util.EventObserver
 import br.com.angelorobson.covid19.R
-import br.com.angelorobson.covid19.databinding.FragmentVirusReportBinding
+import br.com.angelorobson.covid19.databinding.FragmentVirusReportCountriesBinding
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class VirusReportFragment : BindingFragment<FragmentVirusReportBinding>() {
+class VirusReportCountriesFragment : BindingFragment<FragmentVirusReportCountriesBinding>() {
 
-    override fun getLayoutResId(): Int = R.layout.fragment_virus_report
+    override fun getLayoutResId(): Int = R.layout.fragment_virus_report_countries
 
-    private val viewModel by viewModel<VirusReportViewModel>()
+    private val viewModel by viewModel<VirusReportCountriesViewModel>()
 
-    private lateinit var mAdapter: VirusReportAdapter
+    private lateinit var mAdapter: VirusReportCountriesAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,23 +31,23 @@ class VirusReportFragment : BindingFragment<FragmentVirusReportBinding>() {
     }
 
     private fun setUpFragment() {
-        showToolbarWithoutDisplayArrowBack(getString(R.string.states_brazil))
+        showToolbarWithoutDisplayArrowBack(getString(R.string.world))
         setupRecyclerView()
         setHasOptionsMenu(true)
 
-        viewModel.getVirusReportBrazil()
+        viewModel.getVirusReportCountries()
         initObservers()
         initSwipeListener()
     }
 
     private fun initSwipeListener() {
         binding.swipeRefreshLayout.setOnRefreshListener {
-            viewModel.getVirusReportBrazil()
+            viewModel.getVirusReportCountries()
         }
     }
 
     private fun setupRecyclerView() {
-        mAdapter = VirusReportAdapter(mutableListOf())
+        mAdapter = VirusReportCountriesAdapter(mutableListOf())
 
         binding.recyclerView.run {
             adapter = mAdapter
@@ -77,7 +77,7 @@ class VirusReportFragment : BindingFragment<FragmentVirusReportBinding>() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
 
-        inflater.inflate(R.menu.menu_filter_states_brazil, menu)
+        inflater.inflate(R.menu.menu_filter_country, menu)
         val searchView = setupSearchView(menu)
         setQueryTextListener(searchView)
         super.onCreateOptionsMenu(menu, inflater)

@@ -12,7 +12,7 @@ fun Date.formatToServerDateTimeDefaults(): String {
 }
 
 fun Date.formatDateTime(): String {
-    val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale("PT", "br"))
+    val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale("pt", "BR"))
     return sdf.format(this)
 }
 

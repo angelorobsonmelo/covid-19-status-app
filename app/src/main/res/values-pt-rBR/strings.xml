@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">C-19 Report</string>
+
+    <string name="brazil">Brasil</string>
+    <string name="states_brazil">Estados</string>
+    <string name="world">Mundo</string>
+    <string name="status_brazil">Brasil</string>
+    <string name="confirmed">Confirmados</string>
+    <string name="deaths">Mortes</string>
+    <string name="curados">Curados</string>
+    <string name="cases">Casos</string>
+    <string name="update_at">Dados atualizados em %s</string>
+    <string name="resume">Resumo</string>
+    <string name="recent">Recente</string>
+
+    <string name="state_and_uf">%s - %s</string>
+    <string name="all_states">Todos os Estados</string>
+    <string name="no_data">Não há dados no momento</string>
+    <string name="search">Procurar estado</string>
+    <string name="search_by_country">Procurar País</string>
+    <string name="about">Sobre</string>
+</resources>
