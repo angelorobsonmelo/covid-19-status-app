@@ -7,11 +7,12 @@
     <string name="status_brazil">Brazil</string>
     <string name="confirmed">Confirmed</string>
     <string name="deaths">Deaths</string>
-    <string name="curados">Recovered</string>
+    <string name="recovered">Recovered</string>
     <string name="cases">Cases</string>
     <string name="update_at">Updated on %s</string>
     <string name="resume">Resume</string>
     <string name="recent">Recent</string>
+    <string name="active">Active</string>
     <string name="button_status_text" translatable="false">%s: %s</string>
 
     <string name="state_and_uf">%s - %s</string>
