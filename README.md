@@ -1,4 +1,5 @@
 # Covid-19 Report
+Link do apk: http://encurtador.com.br/mwzV2
 
 Application designed to provide reliable information about the status of the virus.
 
