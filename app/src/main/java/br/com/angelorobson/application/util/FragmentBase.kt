@@ -29,7 +29,7 @@ open class FragmentBase : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
 
         builder
-            .setMessage(message.toInt())
+            .setMessage(message)
             .setCancelable(false)
             .setPositiveButton("OK") { _, _ -> }
 
