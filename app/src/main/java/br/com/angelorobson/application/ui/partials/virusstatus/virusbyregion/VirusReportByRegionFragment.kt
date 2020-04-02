@@ -1,0 +1,100 @@
+package br.com.angelorobson.application.ui.partials.virusstatus.virusbyregion
+
+import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import br.com.angelorobson.application.util.BindingFragment
+import br.com.angelorobson.application.util.EventObserver
+import br.com.angelorobson.covid19.R
+import br.com.angelorobson.covid19.databinding.FragmentVirusReportByRegionBinding
+import com.anychart.AnyChart
+import com.anychart.AnyChartView
+import com.anychart.chart.common.dataentry.DataEntry
+import com.anychart.chart.common.dataentry.ValueDataEntry
+import com.anychart.chart.common.listener.Event
+import com.anychart.chart.common.listener.ListenersInterface
+import com.anychart.enums.Align
+import com.anychart.enums.LegendLayout
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_virus_report_by_region.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.util.*
+
+
+class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionBinding>() {
+
+    override fun getLayoutResId(): Int = R.layout.fragment_virus_report_by_region
+
+    private val viewModel by viewModel<VirusReportByRegionViewModel>()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        showToolbarWithDisplayArrowBack("Gráfico por região")
+        hideBottomNavigation()
+        initObservers()
+
+
+        val anyChartView: AnyChartView = any_chart_view
+
+        val pie = AnyChart.pie()
+
+        pie.setOnClickListener(object :
+            ListenersInterface.OnClickListener(arrayOf("x", "value")) {
+            override fun onClick(event: Event) {
+                Toast.makeText(
+                    requireContext(),
+                    event.data["x"].toString() + ":" + event.data["value"],
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+
+        val data: MutableList<DataEntry> = ArrayList()
+        data.add(ValueDataEntry("Norte", 110574))
+        data.add(ValueDataEntry("Nordeste", 82363))
+        data.add(ValueDataEntry("Centro-Oeste", 80000))
+        data.add(ValueDataEntry("Sudeste", 77495))
+        data.add(ValueDataEntry("Sul", 5000))
+
+        pie.data(data)
+
+        pie.title("Fruits imported in 2015 (in kg)")
+        pie.animation(true, 20000)
+
+        pie.labels().position("outside")
+
+        pie.legend().title().enabled(false)
+
+        pie.legend()
+            .position("center-bottom")
+            .itemsLayout(LegendLayout.VERTICAL)
+            .align(Align.LEFT)
+
+        anyChartView.setChart(pie)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getVirusReportByRegionBrazil()
+    }
+
+    private fun initObservers() {
+        viewModel.successObserver.observe(viewLifecycleOwner, EventObserver {
+
+        })
+
+        viewModel.errorObserver.observe(viewLifecycleOwner, EventObserver {
+            showAlertError(it)
+        })
+
+        viewModel.emptyObserver.observe(viewLifecycleOwner, EventObserver {
+            Snackbar.make(requireView(), getString(R.string.no_data), Snackbar.LENGTH_SHORT).show()
+        })
+
+        viewModel.isLoadingEventObserver.observe(viewLifecycleOwner, EventObserver {
+            binding.swipeRefreshLayout.isRefreshing = it
+        })
+
+    }
+
+}

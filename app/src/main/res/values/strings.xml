@@ -23,4 +23,6 @@
     <string name="search_by_country">Search Country</string>
     <string name="about">About</string>
 
+    <string name="chart">Graph</string>
+
 </resources>

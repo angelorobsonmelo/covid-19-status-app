@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import br.com.angelorobson.application.ui.activities.AboutActivity
 import br.com.angelorobson.application.util.BindingFragment
 import br.com.angelorobson.application.util.EventObserver
@@ -30,6 +31,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
     override fun onResume() {
         super.onResume()
         viewModel.getStatusVirusBrazil()
+        showBottomNavigation()
     }
 
     private fun setUpFragment() {
@@ -69,6 +71,10 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
         when (item.itemId) {
             R.id.action_about -> {
                 startActivity(Intent(requireContext(), AboutActivity::class.java))
+            }
+
+            R.id.action_chart -> {
+                findNavController().navigate(R.id.action_virusStatusBrazilFragment_to_virusReportByRegionFragment)
             }
         }
 

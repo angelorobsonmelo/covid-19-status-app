@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
+    <item
+        android:id="@+id/action_chart"
+        android:icon="@drawable/ic_pie_chart_black_24dp"
+        android:title="@string/chart"
+        app:showAsAction="always" />
+
     <item
         android:id="@+id/action_about"
         android:icon="@drawable/ic_person_white_24dp"

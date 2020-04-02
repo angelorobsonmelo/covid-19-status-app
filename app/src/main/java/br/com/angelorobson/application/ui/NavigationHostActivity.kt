@@ -19,4 +19,10 @@ class NavigationHostActivity : AppCompatActivity() {
 
         bottomNav.setupWithNavController(navController)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        super.onBackPressed()
+        return true
+    }
+
 }

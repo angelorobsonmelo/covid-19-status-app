@@ -22,4 +22,5 @@
     <string name="search">Procurar estado</string>
     <string name="search_by_country">Procurar País</string>
     <string name="about">Sobre</string>
+    <string name="chart">Gráfico</string>
 </resources>
