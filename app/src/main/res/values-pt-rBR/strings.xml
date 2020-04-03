@@ -31,6 +31,7 @@
     <string name="south">Sul</string>
 
     <string name="brazil_regions">Regiões do Brasil</string>
+    <string name="case_by_region">Casos por Região</string>
 
 
 </resources>

@@ -101,7 +101,7 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
 
         pie.data(data)
 
-        pie.title("Fruits imported in 2015 (in kg)")
+        pie.title(getString(R.string.case_by_region))
         pie.animation(true, 20000)
 
         pie.labels().position("outside")

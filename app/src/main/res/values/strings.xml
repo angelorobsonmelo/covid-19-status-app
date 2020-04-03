@@ -33,5 +33,6 @@
 
     <string name="brazil_regions">Brazil Regions</string>
     <string name="region_name_with_total" translatable="false">%s (%s)</string>
+    <string name="case_by_region">Cases by Region</string>
 
 </resources>
