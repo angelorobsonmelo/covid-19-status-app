@@ -32,8 +32,41 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
         showToolbarWithDisplayArrowBack("Gráfico por região")
         hideBottomNavigation()
         initObservers()
+        setUpGraph()
+        initSwipeListener()
+    }
 
+    private fun initSwipeListener() {
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.getVirusReportByRegionBrazil()
+        }
+    }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getVirusReportByRegionBrazil()
+    }
+
+    private fun initObservers() {
+        viewModel.successObserver.observe(viewLifecycleOwner, EventObserver {
+
+        })
+
+        viewModel.errorObserver.observe(viewLifecycleOwner, EventObserver {
+            showAlertError(it)
+        })
+
+        viewModel.emptyObserver.observe(viewLifecycleOwner, EventObserver {
+            Snackbar.make(requireView(), getString(R.string.no_data), Snackbar.LENGTH_SHORT).show()
+        })
+
+        viewModel.isLoadingEventObserver.observe(viewLifecycleOwner, EventObserver {
+            binding.swipeRefreshLayout.isRefreshing = it
+        })
+
+    }
+
+    private fun setUpGraph() {
         val anyChartView: AnyChartView = any_chart_view
 
         val pie = AnyChart.pie()
@@ -71,30 +104,6 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
             .align(Align.LEFT)
 
         anyChartView.setChart(pie)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        viewModel.getVirusReportByRegionBrazil()
-    }
-
-    private fun initObservers() {
-        viewModel.successObserver.observe(viewLifecycleOwner, EventObserver {
-
-        })
-
-        viewModel.errorObserver.observe(viewLifecycleOwner, EventObserver {
-            showAlertError(it)
-        })
-
-        viewModel.emptyObserver.observe(viewLifecycleOwner, EventObserver {
-            Snackbar.make(requireView(), getString(R.string.no_data), Snackbar.LENGTH_SHORT).show()
-        })
-
-        viewModel.isLoadingEventObserver.observe(viewLifecycleOwner, EventObserver {
-            binding.swipeRefreshLayout.isRefreshing = it
-        })
-
     }
 
 }
