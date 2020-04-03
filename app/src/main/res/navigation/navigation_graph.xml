@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/virusStatusBrazilFragment"
         android:name="br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazil.VirusStatusBrazilFragment"
-        android:label="VirusStatusBrazilFragment" />
+        android:label="VirusStatusBrazilFragment" >
+        <action
+            android:id="@+id/action_virusStatusBrazilFragment_to_virusReportByRegionFragment"
+            app:destination="@id/virusReportByRegionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/virusReportFragment"
         android:name="br.com.angelorobson.application.ui.partials.virusstatus.virusreportbrazil.VirusReportFragment"
@@ -17,4 +21,8 @@
         android:id="@+id/virusReportCountriesFragment"
         android:name="br.com.angelorobson.application.ui.partials.virusstatus.virusreportcountries.VirusReportCountriesFragment"
         android:label="VirusReportCountriesFragment" />
+    <fragment
+        android:id="@+id/virusReportByRegionFragment"
+        android:name="br.com.angelorobson.application.ui.partials.virusstatus.virusbyregion.VirusReportByRegionFragment"
+        android:label="VirusReportByRegionFragment" />
 </navigation>

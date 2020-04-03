@@ -1,6 +1,5 @@
 package br.com.angelorobson.application.util
 
-import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -14,10 +13,9 @@ import kotlinx.android.synthetic.main.host_navigation_activity.*
 open class FragmentBase : Fragment() {
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    val appLink =
+        "https://drive.google.com/drive/folders/1xSBgZFEvjuqE1KmbkTTvNbFkqDws6hKk?usp=sharing"
 
-    }
 
     fun setUpBehaviorBottomNavigation() {
         val bottomNavigationView = activity?.bottomNavigation
@@ -29,7 +27,7 @@ open class FragmentBase : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
 
         builder
-            .setMessage(message)
+            .setMessage(message.toInt())
             .setCancelable(false)
             .setPositiveButton("OK") { _, _ -> }
 

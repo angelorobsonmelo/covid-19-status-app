@@ -1,6 +1,7 @@
 package br.com.angelorobson.di
 
 import br.com.angelorobson.usecases.remote.virusstatus.GetVirusReportBrazilUseCase
+import br.com.angelorobson.usecases.remote.virusstatus.GetVirusReportByRegionBrazilUseCase
 import br.com.angelorobson.usecases.remote.virusstatus.GetVirusReportCountriesUseCase
 import br.com.angelorobson.usecases.remote.virusstatus.GetVirusStatusBrazilUseCase
 import org.koin.dsl.module
@@ -17,5 +18,9 @@ val remoteUseCaseModule = module {
 
     single {
         GetVirusReportCountriesUseCase(get())
+    }
+
+    single {
+        GetVirusReportByRegionBrazilUseCase(get())
     }
 }

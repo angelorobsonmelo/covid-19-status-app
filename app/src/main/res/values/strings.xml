@@ -15,6 +15,7 @@
     <string name="active">Active</string>
     <string name="mortality_rate">Mortality rate: %s</string>
     <string name="button_status_text" translatable="false">%s: %s</string>
+    <string name="fatalities">Fatalities</string>
 
     <string name="state_and_uf">%s - %s</string>
     <string name="all_states">All States</string>
@@ -22,5 +23,26 @@
     <string name="search">Search status</string>
     <string name="search_by_country">Search Country</string>
     <string name="about">About</string>
+    <string name="share">Share App</string>
+    <string name="share_via">Share via</string>
+
+    <string name="chart">Graph</string>
+
+    <string name="north">North</string>
+    <string name="northeast">Northeast</string>
+    <string name="midwest">Midwest</string>
+    <string name="southeast">Southeast</string>
+    <string name="south">South</string>
+
+    <string name="brazil_regions">Brazil Regions</string>
+    <string name="region_name_with_total" translatable="false">%s (%s)</string>
+    <string name="case_by_region">%s by Region</string>
+
+
+    <string name="unauthorized">Incorrect e-mail or password.</string>
+    <string name="internal_error">An internal error occurred.</string>
+    <string name="unknown_error">Unknown error, contact your system administrator</string>
+    <string name="socket_timout_error">Request timed out, please try again.</string>
+    <string name="no_internet_connection_error">No internet connection</string>
 
 </resources>

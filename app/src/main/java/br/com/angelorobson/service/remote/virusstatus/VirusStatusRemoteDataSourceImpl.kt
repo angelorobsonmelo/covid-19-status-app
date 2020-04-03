@@ -5,11 +5,11 @@ import br.com.angelorobson.domain.models.response.VirusReportCountry
 import br.com.angelorobson.domain.models.response.VirusStatusBrazil
 import br.com.angelorobson.service.utils.BaseRemoteDataSource
 import br.com.angelorobson.service.utils.CoroutineScopeContext
+import br.com.angelorobson.service.utils.HandlerErrorRemoteDataSource.validateStatusCode
 import kotlinx.coroutines.launch
 
 class VirusStatusRemoteDataSourceImpl(private val virusStatusApiDataSource: VirusStatusApiDataSource) :
     VirusStatusRemoteDataSource, CoroutineScopeContext() {
-
 
     override fun getVirusStatusBrazil(callback: BaseRemoteDataSource.RemoteDataSourceCallback<VirusStatusBrazil>) {
         launch {
@@ -18,7 +18,7 @@ class VirusStatusRemoteDataSourceImpl(private val virusStatusApiDataSource: Viru
                 val result = virusStatusApiDataSource.getVirusStatusBrazil().await()
                 callback.onSuccess(result.data)
             } catch (t: Throwable) {
-                callback.onError(t.localizedMessage)
+                callback.onError(validateStatusCode(t))
             } finally {
                 callback.isLoading(false)
             }
@@ -32,7 +32,7 @@ class VirusStatusRemoteDataSourceImpl(private val virusStatusApiDataSource: Viru
                 val result = virusStatusApiDataSource.getReportBrazil().await()
                 callback.onSuccess(result.data)
             } catch (t: Throwable) {
-                callback.onError(t.localizedMessage)
+                callback.onError(validateStatusCode(t))
             } finally {
                 callback.isLoading(false)
             }
@@ -45,10 +45,10 @@ class VirusStatusRemoteDataSourceImpl(private val virusStatusApiDataSource: Viru
             try {
                 val result = virusStatusApiDataSource.getReportCountries()
                     .await()
-                
+
                 callback.onSuccess(result.data)
             } catch (t: Throwable) {
-                callback.onError(t.localizedMessage)
+                callback.onError(validateStatusCode(t))
             } finally {
                 callback.isLoading(false)
             }

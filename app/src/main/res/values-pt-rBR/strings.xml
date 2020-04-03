@@ -10,6 +10,7 @@
     <string name="deaths">Mortes</string>
     <string name="recovered">Curados</string>
     <string name="cases">Casos</string>
+    <string name="fatalities">Fatalidades</string>
     <string name="update_at">Dados atualizados em %s</string>
     <string name="resume">Resumo</string>
     <string name="recent">Recente</string>
@@ -22,4 +23,23 @@
     <string name="search">Procurar estado</string>
     <string name="search_by_country">Procurar País</string>
     <string name="about">Sobre</string>
+    <string name="chart">Gráfico</string>
+    <string name="share">Compartilhar Aplicativo</string>
+    <string name="share_via">Compartilhe via</string>
+
+    <string name="north">Norte</string>
+    <string name="northeast">Nordeste</string>
+    <string name="midwest">Centro-Oeste</string>
+    <string name="southeast">Sudeste</string>
+    <string name="south">Sul</string>
+
+    <string name="brazil_regions">Regiões do Brasil</string>
+    <string name="case_by_region">%s por Região</string>
+
+    <string name="unauthorized">E-mail ou senha incorreta.</string>
+    <string name="internal_error">Ocorreu um erro interno no servidor.</string>
+    <string name="socket_timout_error">Tempo de requisição esgotado, por favor tente novamente.</string>
+    <string name="no_internet_connection_error">Sem conexão com a internet</string>
+    <string name="unknown_error">Erro desconhecido, entre em contato com o desenvolvedor do aplicativo</string>
+
 </resources>

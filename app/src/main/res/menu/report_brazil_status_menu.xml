@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_chart"
+        android:icon="@drawable/ic_pie_chart_black_24dp"
+        android:title="@string/chart"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_share_app"
+        android:icon="@drawable/ic_share_black_24dp"
+        android:title="@string/share"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_update_app"
+        android:icon="@drawable/ic_update_white_24dp"
+        android:title="@string/update_app"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_person_white_24dp"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
+
+</menu>
