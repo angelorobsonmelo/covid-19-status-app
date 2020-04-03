@@ -10,6 +10,7 @@
     <string name="deaths">Mortes</string>
     <string name="recovered">Curados</string>
     <string name="cases">Casos</string>
+    <string name="fatalities">Fatalidades</string>
     <string name="update_at">Dados atualizados em %s</string>
     <string name="resume">Resumo</string>
     <string name="recent">Recente</string>
@@ -31,7 +32,7 @@
     <string name="south">Sul</string>
 
     <string name="brazil_regions">Regiões do Brasil</string>
-    <string name="case_by_region">Casos por Região</string>
+    <string name="case_by_region">%s por Região</string>
 
 
 </resources>

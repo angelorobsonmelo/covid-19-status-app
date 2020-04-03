@@ -1,8 +1,8 @@
 package br.com.angelorobson.application.ui.partials.virusstatus.virusbyregion
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import br.com.angelorobson.application.util.BindingFragment
 import br.com.angelorobson.application.util.EventObserver
 import br.com.angelorobson.application.util.extensions.getNumberFormat
@@ -15,12 +15,13 @@ import com.anychart.chart.common.dataentry.DataEntry
 import com.anychart.chart.common.dataentry.ValueDataEntry
 import com.anychart.chart.common.listener.Event
 import com.anychart.chart.common.listener.ListenersInterface
+import com.anychart.charts.Pie
 import com.anychart.enums.Align
 import com.anychart.enums.LegendLayout
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_virus_report_by_region.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.*
 
 
 class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionBinding>() {
@@ -30,15 +31,69 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
     private val viewModel by viewModel<VirusReportByRegionViewModel>()
 
     private lateinit var anyChartView: AnyChartView
+    private lateinit var tabLayout: TabLayout
+    lateinit var pie: Pie
+
+    private val TAB_CASES = 0
+    private val TAB_FATALITIES = 1
+    private var tabPositionSelected = TAB_CASES
+    private lateinit var title: String
+    private var isChartLoadedFirstTime = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showToolbarWithDisplayArrowBack(getString(R.string.brazil_regions))
         anyChartView = any_chart_view
+        tabLayout = tab_layout
+        title = getString(R.string.cases)
+        pie = AnyChart.pie()
 
+        createTabs()
+        initTabSelectedListener()
         hideBottomNavigation()
         initObservers()
         initSwipeListener()
+    }
+
+    private fun initTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            @SuppressLint("StringFormatMatches")
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.position?.apply {
+                    when (this) {
+                        TAB_CASES -> {
+                            tabPositionSelected = this
+                            title = getString(R.string.cases)
+                            viewModel.getVirusReportByRegionBrazil()
+                        }
+                        TAB_FATALITIES -> {
+                            title = getString(R.string.fatalities)
+                            tabPositionSelected = this
+                            viewModel.getVirusReportByRegionBrazil()
+                        }
+                    }
+                }
+            }
+
+        })
+
+    }
+
+    private fun createTabs() {
+        tabLayout.addTab(
+            tabLayout.newTab().setText(getString(R.string.cases))
+        )
+
+        tabLayout.addTab(
+            tabLayout.newTab().setText(getString(R.string.fatalities))
+        )
+
     }
 
     private fun initSwipeListener() {
@@ -72,20 +127,39 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
     }
 
     private fun setUpGraph(stateGraphs: List<StatesGraphDto>) {
-        val pie = AnyChart.pie()
-
         pie.setOnClickListener(object :
             ListenersInterface.OnClickListener(arrayOf("x", "value")) {
             override fun onClick(event: Event) {
-                Toast.makeText(
-                    requireContext(),
-                    event.data["x"].toString() + ":" + event.data["value"],
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         })
 
-        val data: MutableList<DataEntry> = ArrayList()
+        val data =
+            if (tabPositionSelected == 0) getDataByTabSelectedCases(stateGraphs)
+            else getDataByTabSelectedFatalities(stateGraphs)
+
+        pie.data(data)
+        pie.title(getString(R.string.case_by_region, title))
+        pie.animation(true, 20000)
+        pie.labels().position("outside")
+        pie.legend().title().enabled(false)
+        pie.legend()
+            .position("center-bottom")
+            .itemsLayout(LegendLayout.VERTICAL)
+            .align(Align.LEFT)
+
+        if (isChartLoadedFirstTime) {
+            return
+        }
+
+        anyChartView.setChart(pie)
+        isChartLoadedFirstTime = true
+    }
+
+    private fun getDataByTabSelectedCases(
+        stateGraphs: List<StatesGraphDto>
+    ): MutableList<DataEntry> {
+        val data = arrayListOf<DataEntry>()
+
         stateGraphs.forEach {
             data.add(
                 ValueDataEntry(
@@ -99,21 +173,30 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
             )
         }
 
-        pie.data(data)
+        return data
+    }
 
-        pie.title(getString(R.string.case_by_region))
-        pie.animation(true, 20000)
+    private fun getDataByTabSelectedFatalities(
+        stateGraphs: List<StatesGraphDto>
+    ): MutableList<DataEntry> {
+        val data = arrayListOf<DataEntry>()
 
-        pie.labels().position("outside")
+        stateGraphs.forEach {
+            data.add(
+                ValueDataEntry(
+                    getString(
+                        R.string.region_name_with_total,
+                        getString(it.regionNameResourceId),
+                        it.totalDeaths.getNumberFormat()
+                    ),
+                    it.totalDeaths
+                )
+            )
 
-        pie.legend().title().enabled(false)
 
-        pie.legend()
-            .position("center-bottom")
-            .itemsLayout(LegendLayout.VERTICAL)
-            .align(Align.LEFT)
+        }
 
-        anyChartView.setChart(pie)
+        return data
     }
 
 }
