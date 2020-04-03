@@ -139,7 +139,7 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
 
         pie.data(data)
         pie.title(getString(R.string.case_by_region, title))
-        pie.animation(true, 10000)
+        pie.animation(true, 2000)
         pie.labels().position("outside")
         pie.legend().title().enabled(false)
         pie.legend()

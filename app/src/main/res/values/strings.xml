@@ -23,6 +23,8 @@
     <string name="search">Search status</string>
     <string name="search_by_country">Search Country</string>
     <string name="about">About</string>
+    <string name="share">Share App</string>
+    <string name="share_via">Share via</string>
 
     <string name="chart">Graph</string>
 

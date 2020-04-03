@@ -1,6 +1,7 @@
 package br.com.angelorobson.application.ui.partials.virusstatus.virusstatusbrazil
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -63,7 +64,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.about_menu, menu)
+        inflater.inflate(R.menu.report_brazil_status_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
@@ -76,9 +77,31 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
             R.id.action_chart -> {
                 findNavController().navigate(R.id.action_virusStatusBrazilFragment_to_virusReportByRegionFragment)
             }
+
+            R.id.action_share_app -> {
+                shareApp()
+            }
+
+            R.id.action_update_app -> {
+                openBrowser()
+            }
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun openBrowser() {
+        val openURL = Intent(Intent.ACTION_VIEW)
+        openURL.data = Uri.parse(appLink)
+        startActivity(openURL)
+    }
+
+    private fun shareApp() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
+        intent.putExtra(Intent.EXTRA_TEXT, appLink)
+        startActivity(Intent.createChooser(intent, getString(R.string.share_via)))
     }
 
 }

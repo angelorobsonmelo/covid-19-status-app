@@ -24,6 +24,8 @@
     <string name="search_by_country">Procurar País</string>
     <string name="about">Sobre</string>
     <string name="chart">Gráfico</string>
+    <string name="share">Compartilhar</string>
+    <string name="share_via">Compartilhe via</string>
 
     <string name="north">Norte</string>
     <string name="northeast">Nordeste</string>
