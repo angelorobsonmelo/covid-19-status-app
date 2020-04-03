@@ -36,4 +36,11 @@
     <string name="region_name_with_total" translatable="false">%s (%s)</string>
     <string name="case_by_region">%s by Region</string>
 
+
+    <string name="unauthorized">Incorrect e-mail or password.</string>
+    <string name="internal_error">An internal error occurred.</string>
+    <string name="unknown_error">Unknown error, contact your system administrator</string>
+    <string name="socket_timout_error">Request timed out, please try again.</string>
+    <string name="no_internet_connection_error">No internet connection</string>
+
 </resources>

@@ -48,7 +48,7 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
         })
 
         viewModel.errorObserver.observe(viewLifecycleOwner, EventObserver {
-
+            showAlertError(it)
         })
 
         viewModel.emptyObserver.observe(viewLifecycleOwner, EventObserver {
