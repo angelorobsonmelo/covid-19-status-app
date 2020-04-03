@@ -5,8 +5,10 @@ import android.view.View
 import android.widget.Toast
 import br.com.angelorobson.application.util.BindingFragment
 import br.com.angelorobson.application.util.EventObserver
+import br.com.angelorobson.application.util.extensions.getNumberFormat
 import br.com.angelorobson.covid19.R
 import br.com.angelorobson.covid19.databinding.FragmentVirusReportByRegionBinding
+import br.com.angelorobson.domain.models.dto.StatesGraphDto
 import com.anychart.AnyChart
 import com.anychart.AnyChartView
 import com.anychart.chart.common.dataentry.DataEntry
@@ -27,12 +29,15 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
 
     private val viewModel by viewModel<VirusReportByRegionViewModel>()
 
+    private lateinit var anyChartView: AnyChartView
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showToolbarWithDisplayArrowBack("Gráfico por região")
+        showToolbarWithDisplayArrowBack(getString(R.string.brazil_regions))
+        anyChartView = any_chart_view
+
         hideBottomNavigation()
         initObservers()
-        setUpGraph()
         initSwipeListener()
     }
 
@@ -49,7 +54,7 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
 
     private fun initObservers() {
         viewModel.successObserver.observe(viewLifecycleOwner, EventObserver {
-
+            setUpGraph(it)
         })
 
         viewModel.errorObserver.observe(viewLifecycleOwner, EventObserver {
@@ -66,9 +71,7 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
 
     }
 
-    private fun setUpGraph() {
-        val anyChartView: AnyChartView = any_chart_view
-
+    private fun setUpGraph(stateGraphs: List<StatesGraphDto>) {
         val pie = AnyChart.pie()
 
         pie.setOnClickListener(object :
@@ -83,11 +86,18 @@ class VirusReportByRegionFragment : BindingFragment<FragmentVirusReportByRegionB
         })
 
         val data: MutableList<DataEntry> = ArrayList()
-        data.add(ValueDataEntry("Norte", 110574))
-        data.add(ValueDataEntry("Nordeste", 82363))
-        data.add(ValueDataEntry("Centro-Oeste", 80000))
-        data.add(ValueDataEntry("Sudeste", 77495))
-        data.add(ValueDataEntry("Sul", 5000))
+        stateGraphs.forEach {
+            data.add(
+                ValueDataEntry(
+                    getString(
+                        R.string.region_name_with_total,
+                        getString(it.regionNameResourceId),
+                        it.totalCases.getNumberFormat()
+                    ),
+                    it.totalCases
+                )
+            )
+        }
 
         pie.data(data)
 

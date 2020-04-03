@@ -25,4 +25,13 @@
 
     <string name="chart">Graph</string>
 
+    <string name="north">North</string>
+    <string name="northeast">Northeast</string>
+    <string name="midwest">Midwest</string>
+    <string name="southeast">Southeast</string>
+    <string name="south">South</string>
+
+    <string name="brazil_regions">Brazil Regions</string>
+    <string name="region_name_with_total" translatable="false">%s (%s)</string>
+
 </resources>

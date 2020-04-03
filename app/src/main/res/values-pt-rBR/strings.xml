@@ -23,4 +23,14 @@
     <string name="search_by_country">Procurar País</string>
     <string name="about">Sobre</string>
     <string name="chart">Gráfico</string>
+
+    <string name="north">Norte</string>
+    <string name="northeast">Nordeste</string>
+    <string name="midwest">Centro-Oeste</string>
+    <string name="southeast">Sudeste</string>
+    <string name="south">Sul</string>
+
+    <string name="brazil_regions">Regiões do Brasil</string>
+
+
 </resources>
