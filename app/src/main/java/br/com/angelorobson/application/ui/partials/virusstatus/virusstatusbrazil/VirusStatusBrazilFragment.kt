@@ -81,19 +81,9 @@ class VirusStatusBrazilFragment : BindingFragment<FragmentVirusStatusBrazilBindi
             R.id.action_share_app -> {
                 shareApp()
             }
-
-            R.id.action_update_app -> {
-                openBrowser()
-            }
         }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun openBrowser() {
-        val openURL = Intent(Intent.ACTION_VIEW)
-        openURL.data = Uri.parse(appLink)
-        startActivity(openURL)
     }
 
     private fun shareApp() {
