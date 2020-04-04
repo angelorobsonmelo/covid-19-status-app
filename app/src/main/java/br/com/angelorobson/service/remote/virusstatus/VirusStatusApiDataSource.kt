@@ -1,5 +1,6 @@
 package br.com.angelorobson.service.remote.virusstatus
 
+import androidx.annotation.Keep
 import br.com.angelorobson.domain.models.response.ResponseBase
 import br.com.angelorobson.domain.models.response.VirusReportBrazil
 import br.com.angelorobson.domain.models.response.VirusReportCountry
@@ -7,6 +8,7 @@ import br.com.angelorobson.domain.models.response.VirusStatusBrazil
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 
+@Keep
 interface VirusStatusApiDataSource {
 
     @GET("api/report/v1/brazil")
