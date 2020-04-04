@@ -2,7 +2,7 @@
 
 Application designed to provide reliable information about the status of the virus.
 
-Link do apk: http://encurtador.com.br/mwzV2
+Link do apk: https://drive.google.com/drive/u/0/folders/1xSBgZFEvjuqE1KmbkTTvNbFkqDws6hKk
 
 
 ### This project uses the following stack:
