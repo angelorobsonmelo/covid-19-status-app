@@ -12,62 +12,8 @@
 #   public *;
 #}
 
- ##Retrofit
--dontwarn retrofit2.**
--dontwarn org.codehaus.mojo.**
--keep class retrofit2.** { *; }
--keepattributes Signature
--keepattributes Exceptions
--keepattributes *Annotation*
-
--keepattributes RuntimeVisibleAnnotations
--keepattributes RuntimeInvisibleAnnotations
--keepattributes RuntimeVisibleParameterAnnotations
--keepattributes RuntimeInvisibleParameterAnnotations
-
--keepattributes EnclosingMethod
-
--keepclasseswithmembers class * {
-    @retrofit2.* <methods>;
-}
-
--keepclassmembers,allowobfuscation class * {
-  @com.google.gson.annotations.SerializedName <fields>;
-}
-
--dontwarn retrofit.**
--keep class retrofit.** { *; }
--keepattributes Signature
--keepattributes Exceptions
--dontwarn java.lang.invoke.*
--keep class com.elephantmobile.ui.remote.model.** { *; }
--dontwarn retrofit.appengine.UrlFetchClient
--keepclasseswithmembers class * {
-  @retrofit.http.* <methods>;
-      }
-    -keepclassmembernames interface * {
-        @retrofit.http.* <methods>;
-    }
- -dontwarn retrofit2.Platform$Java8
-
-
 -keep public class br.com.angelorobson.domain.models.response.** {*;}
 
-# ServiceLoader support
--keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
--keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
--keepnames class kotlinx.coroutines.android.AndroidExceptionPreHandler {}
--keepnames class kotlinx.coroutines.android.AndroidDispatcherFactory {}
-
-# Most of volatile fields are updated with AFU and should not be mangled
--keepclassmembernames class kotlinx.** {
-    volatile <fields>;
-}
-
-# Same story for the standard library's SafeContinuation that also uses AtomicReferenceFieldUpdater
--keepclassmembernames class kotlin.coroutines.SafeContinuation {
-    volatile <fields>;
-}
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
