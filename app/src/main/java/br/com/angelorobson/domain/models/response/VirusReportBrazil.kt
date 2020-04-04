@@ -6,7 +6,6 @@ data class VirusReportBrazil(
     val uid: Int,
     val uf: String,
     val state: String,
-    var stateImageResId: Int,
     val cases: Int,
     val deaths: Int,
     val datetime: Date

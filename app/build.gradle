@@ -15,11 +15,12 @@ android {
         applicationId "br.com.angelorobson.covid19"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 5
-        versionName "1.4.1"
+        versionCode 6
+        versionName "1.4.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
 
     dataBinding {
         enabled = true
@@ -63,14 +64,15 @@ android {
             versionNameSuffix '-Stg'
             applicationIdSuffix '.stg'
 
-            buildConfigField "String", "BASE_URL", '"http://staging"'
+            buildConfigField "String", "BASE_URL", '"https://covid19-brazil-api.now.sh/"'
         }
 
         release {
+            debuggable false
+            shrinkResources true
             minifyEnabled true
-            buildConfigField "String", "BASE_URL", '"https://covid19-brazil-api.now.sh/"'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
+            buildConfigField "String", "BASE_URL", '"https://covid19-brazil-api.now.sh/"'
         }
     }
 

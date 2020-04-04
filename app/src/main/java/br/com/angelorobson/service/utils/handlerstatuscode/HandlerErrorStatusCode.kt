@@ -13,7 +13,7 @@ enum class HandlerErrorStatusCode(val value: Int) : MessageStatusCodeError {
     },
     INVALID_CREDENTIALS(0) {
         override fun getMessageFromResourceString(): Int {
-            return R.string.unauthorized
+            return R.string.unknown_error
         }
     },
     INTERNAL_SERVER_ERROR(500) {
