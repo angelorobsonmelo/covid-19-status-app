@@ -4,6 +4,9 @@ Application designed to provide reliable information about the status of the vir
 
 Link do apk: https://drive.google.com/drive/u/0/folders/1xSBgZFEvjuqE1KmbkTTvNbFkqDws6hKk
 
+# Demo
+<img src="demo/demo.gif" width="300" heigth="300">
+
 
 ### This project uses the following stack:
 
